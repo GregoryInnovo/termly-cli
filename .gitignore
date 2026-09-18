@@ -108,3 +108,5 @@ dist
 # AI Assistant settings (local only)
 .claude/
 .grok/
+
+.termly-inbox

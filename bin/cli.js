@@ -37,6 +37,8 @@ program
   .option('--ai <tool>', 'Specify AI tool to use')
   .option('--ai-args <args>', 'Additional arguments for AI tool (e.g., "--continue" for Claude Code)')
   .option('--no-auto-detect', 'Disable AI tool auto-detection')
+  .option('--telegram', 'Use Telegram as the remote client (OpenCode only)')
+  .option('--telegram-token <token>', 'Telegram bot token (or set TERMLY_TELEGRAM_BOT_TOKEN)')
   .option('--debug', 'Enable debug logging')
   .action(async (directory, options) => {
     await startCommand(directory, options);
@@ -100,6 +102,7 @@ program.on('--help', () => {
   console.log('  $ termly --ai aider                     # Use Aider');
   console.log('  $ termly --ai "claude code"             # Use Claude Code');
   console.log('  $ termly start                          # Same as just "termly"');
+  console.log('  $ termly start --telegram               # OpenCode via Telegram bot');
   console.log('  $ termly tools list                     # List available tools');
   console.log('  $ termly status                         # Show all sessions');
   console.log('');
